@@ -1,0 +1,27 @@
+{
+  "name": "rxjs-env",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philipyoo/rxjs-env.git"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.137",
+    "lodash": "^4.17.15",
+    "rxjs": "^6.5.2",
+    "rxjs-compat": "^6.5.2",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.36.1",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.6"
+  }
+}
