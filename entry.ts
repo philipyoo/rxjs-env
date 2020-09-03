@@ -1,1 +1,1 @@
-require('./src/code.ts')
+require('./src/withUI.ts')
