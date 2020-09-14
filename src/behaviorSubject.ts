@@ -1,15 +1,27 @@
 import { combineLatest, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-let a$ = new BehaviorSubject(false)
-let b$ = new BehaviorSubject(false)
+/*
+    Example using behavior subjects and combineLatest
 
-let ace$ = combineLatest(a$, b$).pipe(map(i => i.some(Boolean)))
+    If any of the behavior subjects have a true value, the result subscription will
+    print true. Otherwise the subscription will print false.
+*/
 
-a$.next(false)
-b$.next(true)
+let subject1$ = new BehaviorSubject(true);
+let subject2$ = new BehaviorSubject(false);
 
-ace$.subscribe(i => {
+let combinedSubjects$ = combineLatest(
+    subject1$,
+    subject2$
+).pipe(
+    map(i => i.some(Boolean))
+);
+
+subject1$.next(true);
+subject2$.next(false);
+
+combinedSubjects$.subscribe(result => {
   console.log('-- subscribe --')
-  console.log(i)
-})
+  console.log(result)
+});
